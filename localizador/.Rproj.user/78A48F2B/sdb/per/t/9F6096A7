@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "GrabarTasacion <- function(Directorio, Muestra){\n  write.table(Muestra, paste(Directorio,  \"Tasacion.csv\", sep = \"/\"), dec = \",\", row.names = FALSE, col.names = FALSE)\n  Muestra\n}\n\n",
+    "created" : 1496746975145.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2325063592",
+    "id" : "9F6096A7",
+    "lastKnownWriteTime" : 1471515223,
+    "last_content_update" : 1471515223,
+    "path" : "C:/Users/TBG/Desktop/stima2/stima-r - copia/stima-r/Tasacion/R/GrabarTasacion.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

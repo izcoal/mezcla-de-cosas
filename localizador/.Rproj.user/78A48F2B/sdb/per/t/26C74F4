@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "Estimacion = function(wd){\n  library(randomForest)\n  #library(sqldf)\n  sapply(list.files(pattern=\"[.]R$\", path=\"R/\", full.names=TRUE), source)\n  Inputs=Data(wd)\n  X=Inputs$X\n  objetivo=Inputs$objetivo\n  \n  #Inputs = readObjetivo() \n  #day=Inputs$FECHA\n  #day0=day-547.5\n  #tipologia=ifelse(Inputs$capa==1,\"U\",\"P\")\n  #segprov=Inputs$SegmentoProv\n  \n  #g=Georefer(Inputs)\n  #objetivo=Inputs$Obj\n  #objetivo$idtramo=g$idtramo\n  #Inputs$idzona=g$idzona\n  \n  if(objetivo$capa==1){\n    stima=Unifamiliar(X,objetivo)\n  } else{stima=Plurifamiliar(X,objetivo)}\n  \n  \n  Q1<-quantile(na.omit(stima$individual),0.025)\n  VE<-stima$aggregate\n  Q2<-quantile(na.omit(stima$individual),0.975)\n  \n  #cl=Look_CL(tipologia,stima$error,segprov)\n  P<-c(Q1,VE,Q2)#,cl)#stima$error,segprov,cl)\n  P<-as.data.frame(t(P))\n  names(P)=c(\"2.5%\",\"VE\",\"97.5%\")#,names(cl))\n  write.table(P,\"Tasacion.csv\",sep=\";\",na=\"\",dec=\",\",row.names = FALSE)\n  return(P)\n}",
+    "created" : 1496746220091.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2478514367",
+    "id" : "26C74F4",
+    "lastKnownWriteTime" : 1494929661,
+    "last_content_update" : 1494929661,
+    "path" : "C:/Users/TBG/Desktop/Modelo Innocv/Modelo web/R/Estimacion.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

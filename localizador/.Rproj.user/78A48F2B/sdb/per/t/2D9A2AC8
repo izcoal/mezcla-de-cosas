@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "#\n# This is the user-interface definition of a Shiny web application. You can\n# run the application by clicking 'Run App' above.\n#\n# Find out more about building applications with Shiny here:\n# \n#    http://shiny.rstudio.com/\n#\n\nlibrary(shiny)\nrequire(shinyjs)\n\nrequire(RgoogleMaps)\nrequire(leaflet)\n\n\n\nshinyUI(fluidPage(\n  # Application title\n  titlePanel(\"Maps\"),\n  sidebarPanel(\n\n  textInput(inputId=\"dir\",label=\"Direccion (Ej: Calle Mayor, 15, Madrid)\",value = \" \")\n  ),\n  actionButton(\"localizar\", \"Localizar\"),\n  \n    # Show a plot of the generated distribution\n    mainPanel(\n      #tableOutput(\"table\"),\n      leafletOutput(\"map\")\n    ))\n      \n    )\n  \n\n\n\n",
+    "created" : 1496824592224.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3647513320",
+    "id" : "2D9A2AC8",
+    "lastKnownWriteTime" : 1496824273,
+    "last_content_update" : 1496824273,
+    "path" : "C:/Users/TBG/Desktop/Modelo Innocv/Modelo web/localizador/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
